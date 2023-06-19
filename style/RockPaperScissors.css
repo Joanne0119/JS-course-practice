@@ -1,0 +1,48 @@
+*
+{
+  background-color: rgb(27, 27, 27);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+body
+{
+  padding: 15px;
+}
+.Rock, .Paper, .Scissors
+{
+  padding: 30px;
+  border: 3px solid white;
+  border-radius: 100%;
+  font-size: 70px;
+  margin: 10px;
+  cursor: pointer;
+}
+.Restart
+{
+  padding: 15px 25px;
+  margin: 10px;
+  background-color: white;
+  color: rgb(27,27,27);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.text
+{
+  margin: 5px 0 5px 15px;
+}
+.result-text
+{
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.play-text, .score-text
+{
+  font-size: 20px;
+  margin-top: 40px;
+}
+.yourmove, .commove
+{
+  font-size: 60px;
+}
