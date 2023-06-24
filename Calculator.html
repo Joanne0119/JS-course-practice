@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link href="style/Calculator.css" rel="stylesheet">
+</head>
+<body>
+  <div class="calculator">
+    <div class="total-show"> 
+      <p class="js-total show-text"> </p>
+    </div>
+    <button class="btn1" onclick = "calculate('1')">1</button>
+    <button class="btn2" onclick = "calculate('2')">2</button>
+    <button class="btn3" onclick = "calculate('3')">3</button>
+    <button class="btn-add" onclick = "calculate(' + ')">+</button>
+    <br>
+    <button class="btn4" onclick = "calculate('4')">4</button>
+    <button class="btn5" onclick = "calculate('5')">5</button>
+    <button class="btn6" onclick = "calculate('6')">6</button>
+    <button class="btn-dec" onclick = "calculate(' - ')">-</button>
+    <br>
+    <button class="btn7" onclick = "calculate('7')">7</button>
+    <button class="btn8" onclick = "calculate('8')">8</button>
+    <button class="btn9" onclick = "calculate('9')">9</button>
+    <button class="btn-mul" onclick = "calculate(' * ')">*</button>
+    <br>
+    <button class="btn0" onclick = "calculate('0')">0</button>
+    <button class="btn-dot" onclick = "calculate('.')">.</button>
+    <button class="btn-eq" onclick = "equal()">=</button>
+    <button class="btn-sla" onclick = "calculate(' / ')">/</button>
+    <br>
+    <button class="btn-clear" onclick = "reset()">clear</button>
+    <br>
+  </div>
+
+  <script src="script/Calculator.js"> </script>
+</body>
+</html>
