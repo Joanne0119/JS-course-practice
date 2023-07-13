@@ -108,3 +108,25 @@ function restart()
   localStorage.removeItem('score'); //removeItem will turn the value into null, so we need to write if statement to give it default value
   updateScoreElem();
 }
+
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay()
+{
+  if(!isAutoPlaying)
+  {
+    const playingBtn =  document.querySelector('.Auto-play');playingBtn.innerText = 'Stop Playing';
+    intervalId = setInterval(function(){
+      const playerMove = Math.floor(Math.random() * 3);
+      comp(playerMove);
+    }, 1500);
+    isAutoPlaying = true;
+  }
+  else 
+  {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
+  
+}
