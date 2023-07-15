@@ -29,9 +29,9 @@ function renderTodo()
   const todoArea = document.querySelector('.js-todo-list');
   todoArea.innerHTML = '';
   let todoHTML = '';
-  for(let i = 0; i < todoItems.length; i++)
+ todoItems.forEach(function(todo, i)
   {
-    const todo = todoItems[i];
+    // const todo = todoItems[i];
     const html = `
       <div class="items">
         <div class="section name">
@@ -47,6 +47,7 @@ function renderTodo()
       </div>
     `
     todoHTML += html;
+  })
     /*const todoItemArea = document.createElement('div');
     todoItemArea.setAttribute('class', 'items');
     const nameDiv = document.createElement('div');
@@ -66,8 +67,7 @@ function renderTodo()
     todoItemArea.appendChild(delBtn);
 
     todoArea.appendChild(todoItemArea);*/
-
-  }
+  
   todoArea.innerHTML = todoHTML;
   console.log(todoItems);
 }
