@@ -29,7 +29,7 @@ function renderTodo()
   const todoArea = document.querySelector('.js-todo-list');
   todoArea.innerHTML = '';
   let todoHTML = '';
- todoItems.forEach(function(todo, i)
+ todoItems.forEach((todo, i) =>
   {
     // const todo = todoItems[i];
     const html = `
