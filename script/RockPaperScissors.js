@@ -14,6 +14,19 @@ updateScoreElem();
 //   }
 // }
 
+document.querySelector('.js-rock-btn')
+  .addEventListener('click', () => {
+    comp(0);
+  })
+document.querySelector('.js-paper-btn')
+  .addEventListener('click', () => {
+    comp(1);
+  })
+document.querySelector('.js-scissors-btn')
+  .addEventListener('click', () => {
+    comp(2);
+  })
+
 function comp(rpc)
 {
   let com = Math.floor(Math.random() * 3);
@@ -100,6 +113,11 @@ function fScore(result)
   updateScoreElem();
 }
 
+document.querySelector('.js-restart-btn')
+  .addEventListener('click', () => {
+    restart();
+  })
+
 function restart()
 {
   cScore.meTot = 0;
@@ -111,6 +129,11 @@ function restart()
 
 let isAutoPlaying = false;
 let intervalId;
+
+document.querySelector('.js-autoplay-btn')
+  .addEventListener('click', () => {
+    autoPlay();
+  })
 
 function autoPlay()
 {
