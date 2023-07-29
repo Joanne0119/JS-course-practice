@@ -117,7 +117,7 @@ function autoPlay()
   if(!isAutoPlaying)
   {
     const playingBtn =  document.querySelector('.Auto-play');playingBtn.innerText = 'Stop Playing';
-    intervalId = setInterval(function(){
+    intervalId = setInterval(() => {
       const playerMove = Math.floor(Math.random() * 3);
       comp(playerMove);
     }, 1500);
