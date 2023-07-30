@@ -3,6 +3,12 @@ let todoItems = JSON.parse(localStorage.getItem('todoList')) || [{
   date: '2023/07/25'
 }];
 renderTodo();
+
+document.querySelector('.js-add-btn')
+  .addEventListener('click', () => {
+    addTodo();
+  })
+
 function addTodo()
 {
   const nameElm = document.querySelector('.js-name-input');
@@ -29,7 +35,7 @@ function renderTodo()
   const todoArea = document.querySelector('.js-todo-list');
   todoArea.innerHTML = '';
   let todoHTML = '';
- todoItems.forEach((todo, i) =>
+  todoItems.forEach((todo, i) =>
   {
     // const todo = todoItems[i];
     const html = `
@@ -40,10 +46,7 @@ function renderTodo()
         <div class="section date"> 
           ${todo.date}
         </div>
-        <button class="section del-btn" onclick="
-          todoItems.splice(${i}, 1);
-          renderTodo();
-        ">Delete</button>
+        <button class="section del-btn js-del-btn">Delete</button>
       </div>
     `
     todoHTML += html;
@@ -67,9 +70,18 @@ function renderTodo()
     todoItemArea.appendChild(delBtn);
 
     todoArea.appendChild(todoItemArea);*/
-  
+
   todoArea.innerHTML = todoHTML;
   console.log(todoItems);
+
+  document.querySelectorAll('.js-del-btn')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todoItems.splice(index, 1);
+        renderTodo();
+      })
+    })
+    
 }
 
 // function delTodo(index)
