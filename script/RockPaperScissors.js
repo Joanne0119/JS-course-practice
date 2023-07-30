@@ -17,15 +17,21 @@ updateScoreElem();
 document.querySelector('.js-rock-btn')
   .addEventListener('click', () => {
     comp(0);
-  })
+  });
 document.querySelector('.js-paper-btn')
   .addEventListener('click', () => {
     comp(1);
-  })
+  });
 document.querySelector('.js-scissors-btn')
   .addEventListener('click', () => {
     comp(2);
-  })
+  });
+document.body.addEventListener('keydown', (event) => {
+  if(event.key === 'r') { comp(0); }
+  else if(event.key === 'p') { comp(1); }
+  else if(event.key === 's') { comp(2); }
+});
+
 
 function comp(rpc)
 {
@@ -116,7 +122,7 @@ function fScore(result)
 document.querySelector('.js-restart-btn')
   .addEventListener('click', () => {
     restart();
-  })
+  });
 
 function restart()
 {
@@ -133,7 +139,7 @@ let intervalId;
 document.querySelector('.js-autoplay-btn')
   .addEventListener('click', () => {
     autoPlay();
-  })
+  });
 
 function autoPlay()
 {
