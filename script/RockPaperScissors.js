@@ -30,6 +30,8 @@ document.body.addEventListener('keydown', (event) => {
   if(event.key === 'r') { comp(0); }
   else if(event.key === 'p') { comp(1); }
   else if(event.key === 's') { comp(2); }
+  else if(event.key === 'Backspace') { showRestartConfirmation(); }
+  else if (event.key === 'a') { autoPlay(); }
 });
 
 
@@ -121,9 +123,9 @@ function fScore(result)
 
 document.querySelector('.js-restart-btn')
   .addEventListener('click', () => {
-    restart();
+    showRestartConfirmation();
   });
-
+  
 function restart()
 {
   cScore.meTot = 0;
@@ -133,19 +135,43 @@ function restart()
   updateScoreElem();
 }
 
+function showRestartConfirmation()
+{
+  let confirmMessage = document.querySelector('.js-confirm-message');
+  confirmMessage.innerHTML = `
+    Are You Sure You Want to Reset the Score? 
+    <button class="js-yes-btn reset-confirm-btn">
+      Yes
+    </button>
+    <button class="js-no-btn reset-confirm-btn">
+      No
+    </button>
+  `;
+  document.querySelector('.js-yes-btn')
+    .addEventListener('click', () => {
+      restart();
+      confirmMessage.innerHTML = '';
+    })
+  document.querySelector('.js-no-btn')
+    .addEventListener('click', () => {
+      confirmMessage.innerHTML = '';
+    })
+}
+
 let isAutoPlaying = false;
 let intervalId;
 
 document.querySelector('.js-autoplay-btn')
   .addEventListener('click', () => {
     autoPlay();
-  });
+  })
 
 function autoPlay()
 {
+  const playingBtn =  document.querySelector('.Auto-play');
   if(!isAutoPlaying)
   {
-    const playingBtn =  document.querySelector('.Auto-play');playingBtn.innerText = 'Stop Playing';
+    playingBtn.innerText = 'Stop Playing';
     intervalId = setInterval(() => {
       const playerMove = Math.floor(Math.random() * 3);
       comp(playerMove);
@@ -156,6 +182,7 @@ function autoPlay()
   {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    playingBtn.innerText = 'Auto Play';
   }
   
 }
